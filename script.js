@@ -6,8 +6,8 @@ class Calculator {
     }
 
     clear() {
-        this.currOperand = ''
-        this.prevOperand = ''
+        this.currentOperand = ''
+        this.previousOperand = ''
         this.operation = undefined
     }
 
@@ -16,7 +16,7 @@ class Calculator {
     }
 
     appendNumber(num) {
-
+        this.currentOperand = num
     }
 
     chooseOperation(operation) {
@@ -28,7 +28,7 @@ class Calculator {
     }
 
     update() {
-
+        this.currOperand.innerText = this.currentOperand
     }
 }
 
@@ -44,7 +44,7 @@ const calculator = new Calculator(prevOperand, currOperand)
 
 numberButtons.forEach(button => {
     button.addEventListener('click', () => {
-        calculator.appendNumber(button.innerHTML)
+        calculator.appendNumber(button.innerText)
         calculator.update()
     })
 })
