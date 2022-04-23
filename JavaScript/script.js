@@ -11,7 +11,7 @@ class Calculator {
         this.operation = undefined
     }
 
-    delete () {
+    delete() {
         this.currentOperand = this.currentOperand.toString().slice(0, -1)
     }
 
@@ -38,16 +38,16 @@ class Calculator {
         const current = parseFloat(this.currentOperand)
         if (isNaN(prev) || isNaN(current)) return
         switch (this.operation) {
-            case '+': 
+            case '+':
                 computation = prev + current
                 break
-            case '-': 
+            case '-':
                 computation = prev - current
                 break
-            case '*': 
+            case '*':
                 computation = prev * current
                 break
-            case '÷': 
+            case '÷':
                 computation = prev / current
                 break
             default:
@@ -84,7 +84,7 @@ class Calculator {
         } else {
             this.prevOperand.innerText = ''
         }
-        
+
     }
 }
 
@@ -126,3 +126,15 @@ deleteButton.addEventListener('click', button => {
     calculator.delete()
     calculator.update()
 })
+
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+        navigator.serviceWorker
+            .register("/serviceWorker.js")
+            .then(registration => {
+                console.log("Service Worker Registered")
+            }).catch(err => {
+                console.log("Service Worker Failed to Register")
+            })
+    })
+}

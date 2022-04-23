@@ -1,0 +1,16 @@
+{
+    "name": "Calculations",
+    "short_name": "X",
+    "start_url": "index.html",
+    "display": "standalone",
+    "background_color": "#FBD6CC",
+    "theme_color": "#9064B9",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "Image/logo.png",
+            "type": "image/png",
+            "sizes": "500x500"
+        }
+    ]
+}
